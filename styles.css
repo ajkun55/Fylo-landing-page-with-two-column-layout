@@ -1,0 +1,359 @@
+@import url('./reset.css');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital@0;1&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+
+
+:root{
+    --clr-Very-Dark-Blue: hsl(243, 87%, 12%);
+    --clr-Desaturated-Blue: hsl(238, 22%, 44%);
+
+    --clr-Bright-Blue: hsl(224, 93%, 58%);
+    --clr-Moderate-Cyan: hsl(170, 45%, 43%);
+
+    --clr-Light-Grayish-Blue: hsl(240, 75%, 98%);
+    --clr-Light-Gray: hsl(0, 0%, 75%);
+}
+
+
+body{
+    font-family: "Open Sans", sans-serif;
+    font-weight: 400;
+    min-height: 100vh;
+    color: var(--clr-Very-Dark-Blue);
+    font-size: 16px;
+}
+
+h1, h2, button, nav{
+    font-family: "Raleway", sans-serif;
+}
+
+h1, h2, button{
+    font-weight: 700;
+}
+
+a{
+    color: inherit;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.container{
+    padding: 2rem 0;
+    width: 89%;
+    max-width: 1280px;
+    margin: 0 auto;
+}
+
+section{
+    padding-block: 3rem;
+}
+
+.flex{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.error{
+    visibility: hidden;
+    color: red;
+    margin: 0 !important;
+}
+
+
+
+/*header*/
+
+header{
+    img{
+        max-width: 5rem;
+    }
+}
+
+nav{
+    font-weight: 400;
+}
+
+ul{
+    width: 100%;
+    padding: 0;
+}
+
+li{
+    list-style: none;
+    margin-left: 1rem;
+}
+
+/*hero*/
+
+#hero{
+    text-align: center;
+    display: flex;
+    flex-direction: column-reverse;
+    gap: 2rem;
+    p{
+        margin-block: 1.5rem; 
+        padding-inline: 5%;
+    }
+}
+
+#hero form{
+    display: grid;
+    padding-inline: 5%;    
+}
+
+input, button{
+    height: 3rem;
+}
+
+input{
+    width: 100%;
+    border: 1.5px solid var(--clr-Desaturated-Blue);
+    border-radius: 0.3rem;
+    padding-left: 1rem;
+}
+
+button{
+    border: none;
+    border-radius: 0.3rem;
+    background-color: var(--clr-Bright-Blue);
+    color: var(--clr-Light-Grayish-Blue);
+    box-shadow: 0 0 0.5rem 1px var(--clr-Light-Gray);
+    margin-block: 1.5rem;
+    cursor: pointer;
+}
+
+button:hover{
+    opacity: 0.7;
+}
+/*productive*/
+
+#productive{
+    display: flex;
+    flex-direction: column-reverse;
+    gap: 2rem;    
+}
+
+.bg{
+    background: var(--clr-Light-Grayish-Blue);
+    position: relative;
+}
+.bg::before{
+    background: url('./images/bg-curve-mobile.svg') no-repeat;
+    background-size: 100% 100%;
+    content: '';
+    width: 100%;
+    height: 53px;
+    position: absolute;
+    top: -53px;
+}
+
+.bg .col1{
+    h1{
+        font-size: 1.2rem;
+        margin-block: 1.5rem;
+    }
+    p{
+        margin-bottom: 1rem;
+    }
+    a{
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        color: var(--clr-Moderate-Cyan);
+        border-bottom: 1px solid var(--clr-Moderate-Cyan);
+        width: 12rem;
+        margin: 2rem auto;
+    }
+}
+
+.card{
+    width: 90%;
+    max-width: 360px;
+    padding: 5%;
+    margin: 3rem auto;
+    background-color: white;
+    border-radius: 0.8rem;
+    box-shadow: 0 0 1rem 1px var(--clr-Light-Gray);
+}
+
+.ceo{
+    display: flex;
+    align-items: center;
+    img{
+        border-radius: 50%;
+        max-width: 4rem;
+        aspect-ratio: 1;
+        margin-right: 0.5rem;
+    }
+    .name{
+        font-weight: 700;
+    }
+    .column{        
+        max-height: 4rem;
+        p{
+            margin-bottom: 0 !important;
+        }
+    }
+}
+.quote{
+    margin-bottom: 1rem;
+}
+@media (width > 950px){
+    .bg::before{
+        background: url('./images/bg-curve-desktop.svg') no-repeat;
+        background-size: 100% 100%;
+        height: 114px;
+        top: -114px;
+    }
+    .card{
+        margin: 3rem 0 0;
+    }
+    .bg .col1 a{
+        margin: 1.5rem 0;
+    }
+    .col1{
+        width: 90%;
+    }
+    #early-access{
+        .col2{
+            margin-left: 20%;
+        }
+        button{
+            max-width: 15rem;
+        }
+    }
+    li{
+        margin-left: 3rem;
+    }
+    h1{
+        font-size: 2.2rem;
+    }
+    #productive h1{
+        font-size: 2rem;
+    }
+    .bg .col1 p{
+        max-width: 34rem;
+    }
+    .bg2 .col1{
+        h2{
+            font-size: 1.85rem;
+        }
+        p{
+            max-width: 32rem;
+        }
+    }
+}
+
+/*early-access*/
+
+#early-access{
+    text-align: center;
+}
+
+.bg2{
+    background-color: var(--clr-Desaturated-Blue);
+    h2{
+        color: white;
+    }
+    p{
+        color: var(--clr-Light-Grayish-Blue);
+        margin-block: 1.5rem;
+    }
+    form{
+        display: grid;
+    }
+    button{
+        box-shadow: none;
+    }
+}
+
+
+/*footer*/
+
+footer{
+    background-color: var(--clr-Very-Dark-Blue);
+    color: var(--clr-Light-Grayish-Blue);
+}
+
+.footer-contents{
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+}
+
+.about, .contact{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.reach p{
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+
+.icons{
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    align-items: center;
+    a{
+        border-radius: 50%;
+        border: 1px solid var(--clr-Light-Grayish-Blue);
+        padding: 10px;
+    }
+}
+
+.icons a:hover{
+    border-color: var(--clr-Bright-Blue);
+    img{
+        filter: brightness(0) saturate(100%) invert(35%) sepia(95%) saturate(761%) hue-rotate(195deg) brightness(96%) contrast(112%);
+    }
+}
+
+footer a:hover{
+    color: var(--clr-Bright-Blue);
+}
+
+@media (width > 950px){
+    .container{
+        text-align: start !important;
+    }
+    #hero, #productive, #early-access{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        align-items: center;
+    }
+    #hero{
+        margin-bottom: 8rem;
+        form, p{
+            padding-inline: 0;
+        }
+        form{
+            display: flex;
+            align-items: flex-end;
+            gap: 1.5rem;
+        }
+        input{
+            width: 18rem;
+        }
+        button{
+            width: 12rem;
+        }
+    }
+    footer{
+        padding-top: 4rem;
+    }
+    .footer-contents{
+        flex-direction: row;
+        justify-content: space-between;
+        width: 80%;
+        padding-block: 3rem 2rem;
+    }
+}
+
+
+
